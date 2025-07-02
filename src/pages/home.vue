@@ -154,7 +154,7 @@
                         {{ t('updateNow') }}
                     </el-dropdown-item>
                     <el-dropdown-item
-                        v-if="isTauri"
+                        v-else-if="isTauri"
                         @click="sendUpdateEvent('update-check')"
                     >
                         {{ t('checkUpdate') }}
@@ -1197,7 +1197,6 @@ onMounted(() => {
                 }
 
                 .appDesc {
-                    max-width: 124px;
                     display: -webkit-box;
                     font-size: 12px;
                     color: gray;
@@ -1259,6 +1258,10 @@ onMounted(() => {
 
     .isUpdate {
         color: #e83737;
+
+        &:hover {
+            color: #e83737;
+        }
     }
 }
 
